@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Projectile : MonoBehaviour
 {
     public bool useExplosive = false;
-    [SerializeField] private GameObject explosiveDamagePrefab;
-    [SerializeField] private GameObject explosiveEffectPrefab;
     [SerializeField] private float damageToDo = 25f;
     [SerializeField] private float returnTime = 3f;
     private float timer;
@@ -17,7 +14,7 @@ public class Projectile : MonoBehaviour
     private float startReturnTime;
     [SerializeField] private bool isPlayers = false;
     private TrailRenderer trailRenderer;
-    public ExplosiveDamagePool explosiveDamagePool;
+    [HideInInspector] public ExplosiveDamagePool explosiveDamagePool;
 
     private void Awake()
     {
